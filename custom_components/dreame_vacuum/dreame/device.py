@@ -259,10 +259,10 @@ class DreameVacuumDevice:
         props = property_list.copy()
         results = []
         while props:
-            result = self._protocol.get_properties(props[:15])
+            result = self._protocol.get_properties(props[:10])
             if result is not None:
                 results.extend(result)
-                props[:] = props[15:]
+                props[:] = props[10:]
 
         changed = False
         callbacks = []
